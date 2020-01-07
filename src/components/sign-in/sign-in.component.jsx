@@ -10,8 +10,8 @@ class SignIn extends React.Component{
             password: '',
             email: ''
         };
-    
-    }  
+
+    }
     handleSubmit = event =>{
         alert();
         event.preventDefault();
@@ -30,12 +30,14 @@ class SignIn extends React.Component{
                 <span>Sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
-                    <FormInput name="email" type="email" label="Email" value={email} required onChange={this.handleChange} /> 
-                 
-                    <FormInput name="password" type="password" label="Password" value={password} required   onChange={this.handleChange}/> 
-                  
-                    <CustomButton  type="submit">Sign In </CustomButton>
-                    <CustomButton  onClick={ signInWithGoogle }>Sign In wtih google</CustomButton>
+                    <FormInput name="email" type="email" label="Email" value={email} required onChange={this.handleChange} />
+
+                    <FormInput name="password" type="password" label="Password" value={password} required   onChange={this.handleChange}/>
+                    <div className='buttons'>
+                        <CustomButton  type="submit">Sign In </CustomButton>
+                        <CustomButton  onClick={ signInWithGoogle } isGoogleSignIn>Sign In wtih google</CustomButton>
+                    </div>
+
                 </form>
             </div>
         )
